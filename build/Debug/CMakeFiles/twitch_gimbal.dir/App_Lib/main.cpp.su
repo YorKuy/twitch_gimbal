@@ -1,0 +1,7 @@
+/home/yorkuy/Code/twitch_gimbal/RM2023_Lib_V1.2/RM_Lib.h:677:7:<unnamed struct>::<constructor>()	16	static
+/home/yorkuy/Code/twitch_gimbal/App_Lib/main.cpp:15:5:int main()	8	static
+/home/yorkuy/Code/twitch_gimbal/App_Lib/main.cpp:46:17:void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef*)	16	static
+/home/yorkuy/Code/twitch_gimbal/App_Lib/main.cpp:51:17:void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef*)	16	static
+/home/yorkuy/Code/twitch_gimbal/App_Lib/main.cpp:56:17:void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)	16	static
+/home/yorkuy/Code/twitch_gimbal/App_Lib/main.cpp:59:1:void __static_initialization_and_destruction_0(int, int)	16	static
+/home/yorkuy/Code/twitch_gimbal/App_Lib/main.cpp:59:1:cpp)	8	static

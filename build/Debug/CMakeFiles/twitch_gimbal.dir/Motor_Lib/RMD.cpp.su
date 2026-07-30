@@ -1,0 +1,12 @@
+/home/yorkuy/Code/twitch_gimbal/RM2023_Lib_V1.2/RM_Lib.h:677:7:<unnamed struct>::<constructor>()	16	static
+/home/yorkuy/Code/twitch_gimbal/Motor_Lib/RMD.cpp:20:19:HAL_StatusTypeDef USER_CAN::RMD_Read_and_Write_Things(uint16_t, uint16_t)	24	static
+/home/yorkuy/Code/twitch_gimbal/Motor_Lib/RMD.cpp:38:19:HAL_StatusTypeDef USER_CAN::RMD_Write_PID(uint16_t, uint16_t, uint16_t, uint16_t, uint16_t, uint16_t, uint16_t, uint16_t)	32	static
+/home/yorkuy/Code/twitch_gimbal/Motor_Lib/RMD.cpp:54:19:HAL_StatusTypeDef USER_CAN::RMD_Write_ACCLE_to_RAM(uint16_t, int32_t)	32	static
+/home/yorkuy/Code/twitch_gimbal/Motor_Lib/RMD.cpp:71:19:HAL_StatusTypeDef USER_CAN::RMD_Write_EncoderOffset_to_ROM(uint16_t, uint16_t)	24	static
+/home/yorkuy/Code/twitch_gimbal/Motor_Lib/RMD.cpp:88:19:HAL_StatusTypeDef USER_CAN::RMD_Iqcontrol_Motor(uint16_t, int16_t)	24	static
+/home/yorkuy/Code/twitch_gimbal/Motor_Lib/RMD.cpp:109:19:HAL_StatusTypeDef USER_CAN::RMD_Speedcontrol_Motor(uint16_t, uint16_t, uint16_t, int32_t)	32	static
+/home/yorkuy/Code/twitch_gimbal/Motor_Lib/RMD.cpp:127:19:HAL_StatusTypeDef USER_CAN::RMD_Anglecontrol_Motor(uint16_t, uint16_t, uint8_t, uint16_t, uint16_t)	32	static
+/home/yorkuy/Code/twitch_gimbal/Motor_Lib/RMD.cpp:141:19:HAL_StatusTypeDef USER_CAN::RMD_Receive(CAN_HandleTypeDef*)	16	static
+/home/yorkuy/Code/twitch_gimbal/Motor_Lib/RMD.cpp:147:19:HAL_StatusTypeDef MOTOR_RMD::RMD_update()	24	static
+/home/yorkuy/Code/twitch_gimbal/Motor_Lib/RMD.cpp:281:1:void __static_initialization_and_destruction_0(int, int)	16	static
+/home/yorkuy/Code/twitch_gimbal/Motor_Lib/RMD.cpp:281:1:cpp)	8	static

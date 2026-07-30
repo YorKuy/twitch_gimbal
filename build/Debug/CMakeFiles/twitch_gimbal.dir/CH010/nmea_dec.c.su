@@ -1,0 +1,9 @@
+/home/yorkuy/Code/twitch_gimbal/CH010/nmea_dec.c:16:12:sync_nmea	16	static
+/home/yorkuy/Code/twitch_gimbal/CH010/nmea_dec.c:24:15:dmm2deg	40	static
+/home/yorkuy/Code/twitch_gimbal/CH010/nmea_dec.c:32:13:septime	32	static
+/home/yorkuy/Code/twitch_gimbal/CH010/nmea_dec.c:41:12:dec_gga	104	static
+/home/yorkuy/Code/twitch_gimbal/CH010/nmea_dec.c:82:12:dec_rmc	88	static
+/home/yorkuy/Code/twitch_gimbal/CH010/nmea_dec.c:119:12:dec_sxt	160	static
+/home/yorkuy/Code/twitch_gimbal/CH010/nmea_dec.c:188:12:parse_nmea	296	static
+/home/yorkuy/Code/twitch_gimbal/CH010/nmea_dec.c:245:5:input_nmea	16	static
+/home/yorkuy/Code/twitch_gimbal/CH010/nmea_dec.c:275:5:nmea_dec_dump_msg	352	static

@@ -1,0 +1,13 @@
+/home/yorkuy/Code/twitch_gimbal/CH010/hipnuc_dec.c:18:6:IMU_UART_Init	8	static
+/home/yorkuy/Code/twitch_gimbal/CH010/hipnuc_dec.c:29:6:IMU_UART_IRQHandler	32	static
+/home/yorkuy/Code/twitch_gimbal/CH010/hipnuc_dec.c:67:6:process_data	4	static
+/home/yorkuy/Code/twitch_gimbal/CH010/hipnuc_dec.c:102:17:U2	24	static
+/home/yorkuy/Code/twitch_gimbal/CH010/hipnuc_dec.c:109:14:R4	24	static
+/home/yorkuy/Code/twitch_gimbal/CH010/hipnuc_dec.c:116:17:U4	24	static
+/home/yorkuy/Code/twitch_gimbal/CH010/hipnuc_dec.c:123:15:D8	24	static
+/home/yorkuy/Code/twitch_gimbal/CH010/hipnuc_dec.c:132:12:parse_data	40	static
+/home/yorkuy/Code/twitch_gimbal/CH010/hipnuc_dec.c:324:12:decode_hipnuc	24	static
+/home/yorkuy/Code/twitch_gimbal/CH010/hipnuc_dec.c:342:12:sync_hipnuc	16	static
+/home/yorkuy/Code/twitch_gimbal/CH010/hipnuc_dec.c:360:5:hipnuc_input	16	static
+/home/yorkuy/Code/twitch_gimbal/CH010/hipnuc_dec.c:408:5:hipnuc_dump_packet	648	static
+/home/yorkuy/Code/twitch_gimbal/CH010/hipnuc_dec.c:707:13:hipnuc_crc16	48	static

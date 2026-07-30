@@ -1,0 +1,4 @@
+/home/yorkuy/Code/twitch_gimbal/RM2023_Lib_V1.2/RM_Lib.h:693:7:<unnamed struct>::<constructor>()	16	static
+/home/yorkuy/Code/twitch_gimbal/RM2023_Lib_V1.2/RM_Lib.h:872:3:BMI088::BMI088(SPI_HandleTypeDef*, TIM_HandleTypeDef*, GPIO_TypeDef*, uint16_t, GPIO_TypeDef*, uint16_t, uint16_t, float, BMI088_GyroRangeTypeDef, BMI088_AccRangeTypeDef)	32	static
+/home/yorkuy/Code/twitch_gimbal/Core/Src/app_globals.cpp:15:24:void __static_initialization_and_destruction_0(int, int)	40	static
+/home/yorkuy/Code/twitch_gimbal/Core/Src/app_globals.cpp:15:24:cpp)	8	static
