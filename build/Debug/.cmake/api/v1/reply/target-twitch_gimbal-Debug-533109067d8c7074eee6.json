@@ -92,47 +92,47 @@
 			[
 				{
 					"backtrace" : 4,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/Control"
+					"path" : "/home/yorkuy/code/twitch_gimbal/Control"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/Math_Lib"
+					"path" : "/home/yorkuy/code/twitch_gimbal/Math_Lib"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/Motor_Lib"
+					"path" : "/home/yorkuy/code/twitch_gimbal/Motor_Lib"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/RM2023_Lib_V1.2"
+					"path" : "/home/yorkuy/code/twitch_gimbal/RM2023_Lib_V1.2"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/CH010"
+					"path" : "/home/yorkuy/code/twitch_gimbal/CH010"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/App_Lib"
+					"path" : "/home/yorkuy/code/twitch_gimbal/App_Lib"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/cmake/stm32cubemx/../../Core/Inc"
+					"path" : "/home/yorkuy/code/twitch_gimbal/cmake/stm32cubemx/../../Core/Inc"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc"
+					"path" : "/home/yorkuy/code/twitch_gimbal/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy"
+					"path" : "/home/yorkuy/code/twitch_gimbal/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32F4xx/Include"
+					"path" : "/home/yorkuy/code/twitch_gimbal/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32F4xx/Include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/cmake/stm32cubemx/../../Drivers/CMSIS/Include"
+					"path" : "/home/yorkuy/code/twitch_gimbal/cmake/stm32cubemx/../../Drivers/CMSIS/Include"
 				}
 			],
 			"language" : "C",
@@ -195,47 +195,47 @@
 			[
 				{
 					"backtrace" : 4,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/Control"
+					"path" : "/home/yorkuy/code/twitch_gimbal/Control"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/Math_Lib"
+					"path" : "/home/yorkuy/code/twitch_gimbal/Math_Lib"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/Motor_Lib"
+					"path" : "/home/yorkuy/code/twitch_gimbal/Motor_Lib"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/RM2023_Lib_V1.2"
+					"path" : "/home/yorkuy/code/twitch_gimbal/RM2023_Lib_V1.2"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/CH010"
+					"path" : "/home/yorkuy/code/twitch_gimbal/CH010"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/App_Lib"
+					"path" : "/home/yorkuy/code/twitch_gimbal/App_Lib"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/cmake/stm32cubemx/../../Core/Inc"
+					"path" : "/home/yorkuy/code/twitch_gimbal/cmake/stm32cubemx/../../Core/Inc"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc"
+					"path" : "/home/yorkuy/code/twitch_gimbal/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy"
+					"path" : "/home/yorkuy/code/twitch_gimbal/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32F4xx/Include"
+					"path" : "/home/yorkuy/code/twitch_gimbal/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32F4xx/Include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/cmake/stm32cubemx/../../Drivers/CMSIS/Include"
+					"path" : "/home/yorkuy/code/twitch_gimbal/cmake/stm32cubemx/../../Drivers/CMSIS/Include"
 				}
 			],
 			"language" : "CXX",
@@ -294,47 +294,47 @@
 			[
 				{
 					"backtrace" : 4,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/Control"
+					"path" : "/home/yorkuy/code/twitch_gimbal/Control"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/Math_Lib"
+					"path" : "/home/yorkuy/code/twitch_gimbal/Math_Lib"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/Motor_Lib"
+					"path" : "/home/yorkuy/code/twitch_gimbal/Motor_Lib"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/RM2023_Lib_V1.2"
+					"path" : "/home/yorkuy/code/twitch_gimbal/RM2023_Lib_V1.2"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/CH010"
+					"path" : "/home/yorkuy/code/twitch_gimbal/CH010"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/App_Lib"
+					"path" : "/home/yorkuy/code/twitch_gimbal/App_Lib"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/cmake/stm32cubemx/../../Core/Inc"
+					"path" : "/home/yorkuy/code/twitch_gimbal/cmake/stm32cubemx/../../Core/Inc"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc"
+					"path" : "/home/yorkuy/code/twitch_gimbal/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy"
+					"path" : "/home/yorkuy/code/twitch_gimbal/cmake/stm32cubemx/../../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32F4xx/Include"
+					"path" : "/home/yorkuy/code/twitch_gimbal/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32F4xx/Include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/home/yorkuy/Code/twitch_gimbal/cmake/stm32cubemx/../../Drivers/CMSIS/Include"
+					"path" : "/home/yorkuy/code/twitch_gimbal/cmake/stm32cubemx/../../Drivers/CMSIS/Include"
 				}
 			],
 			"language" : "ASM",
@@ -361,7 +361,7 @@
 				"role" : "flags"
 			},
 			{
-				"fragment" : "-mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -T \"/home/yorkuy/Code/twitch_gimbal/STM32F405XX_FLASH.ld\" --specs=nano.specs -Wl,-Map=twitch_gimbal.map -Wl,--gc-sections -Wl,--print-memory-usage",
+				"fragment" : "-mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -T \"/home/yorkuy/code/twitch_gimbal/STM32F405XX_FLASH.ld\" --specs=nano.specs -Wl,-Map=twitch_gimbal.map -Wl,--gc-sections -Wl,--print-memory-usage",
 				"role" : "flags"
 			},
 			{

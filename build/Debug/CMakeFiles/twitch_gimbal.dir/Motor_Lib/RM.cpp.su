@@ -1,6 +1,6 @@
-/home/yorkuy/Code/twitch_gimbal/RM2023_Lib_V1.2/RM_Lib.h:677:7:<unnamed struct>::<constructor>()	16	static
-/home/yorkuy/Code/twitch_gimbal/Motor_Lib/RM.cpp:3:19:HAL_StatusTypeDef MOTOR_RM::update()	16	static
-/home/yorkuy/Code/twitch_gimbal/Motor_Lib/RM.cpp:19:19:HAL_StatusTypeDef MOTOR_RM::DAMIAO_Update()	16	static
-/home/yorkuy/Code/twitch_gimbal/Motor_Lib/RM.cpp:35:6:void MOTOR_RM::update_mang_inf()	16	static
-/home/yorkuy/Code/twitch_gimbal/Motor_Lib/RM.cpp:52:1:void __static_initialization_and_destruction_0(int, int)	16	static
-/home/yorkuy/Code/twitch_gimbal/Motor_Lib/RM.cpp:52:1:cpp)	8	static
+/home/yorkuy/code/twitch_gimbal/RM2023_Lib_V1.2/RM_Lib.h:677:7:<unnamed struct>::<constructor>()	16	static
+/home/yorkuy/code/twitch_gimbal/Motor_Lib/RM.cpp:3:19:HAL_StatusTypeDef MOTOR_RM::update()	16	static
+/home/yorkuy/code/twitch_gimbal/Motor_Lib/RM.cpp:19:19:HAL_StatusTypeDef MOTOR_RM::DAMIAO_Update()	16	static
+/home/yorkuy/code/twitch_gimbal/Motor_Lib/RM.cpp:35:6:void MOTOR_RM::update_mang_inf()	16	static
+/home/yorkuy/code/twitch_gimbal/Motor_Lib/RM.cpp:52:1:void __static_initialization_and_destruction_0(int, int)	16	static
+/home/yorkuy/code/twitch_gimbal/Motor_Lib/RM.cpp:52:1:cpp)	8	static

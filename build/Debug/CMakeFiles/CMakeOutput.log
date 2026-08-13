@@ -13,7 +13,7 @@ Compilation of the C compiler identification source "CMakeCCompilerId.c" produce
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.su"
 
-The C compiler identification is GNU, found in "/home/yorkuy/Code/twitch_gimbal/build/Debug/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.o"
+The C compiler identification is GNU, found in "/home/yorkuy/code/twitch_gimbal/build/Debug/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.o"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/arm-none-eabi-g++ 
@@ -28,10 +28,10 @@ Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" p
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.su"
 
-The CXX compiler identification is GNU, found in "/home/yorkuy/Code/twitch_gimbal/build/Debug/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.o"
+The CXX compiler identification is GNU, found in "/home/yorkuy/code/twitch_gimbal/build/Debug/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.o"
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/yorkuy/Code/twitch_gimbal/build/Debug/CMakeFiles/CMakeTmp
+Change Dir: /home/yorkuy/code/twitch_gimbal/build/Debug/CMakeFiles/CMakeTmp
 
 Run Build Command(s):/usr/bin/ninja cmTC_cf549 && [1/2] Building C object CMakeFiles/cmTC_cf549.dir/CMakeCCompilerABI.c.obj
 Using built-in specs.
@@ -84,7 +84,7 @@ Parsed C implicit include dir info from above output: rv=done
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(arm-none-eabi-g\+\+|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/yorkuy/Code/twitch_gimbal/build/Debug/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/yorkuy/code/twitch_gimbal/build/Debug/CMakeFiles/CMakeTmp]
   ignore line: []
   ignore line: [Run Build Command(s):/usr/bin/ninja cmTC_cf549 && [1/2] Building C object CMakeFiles/cmTC_cf549.dir/CMakeCCompilerABI.c.obj]
   ignore line: [Using built-in specs.]
@@ -128,7 +128,7 @@ Parsed C implicit link information from above output:
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/yorkuy/Code/twitch_gimbal/build/Debug/CMakeFiles/CMakeTmp
+Change Dir: /home/yorkuy/code/twitch_gimbal/build/Debug/CMakeFiles/CMakeTmp
 
 Run Build Command(s):/usr/bin/ninja cmTC_36a7e && [1/2] Building CXX object CMakeFiles/cmTC_36a7e.dir/CMakeCXXCompilerABI.cpp.obj
 Using built-in specs.
@@ -190,7 +190,7 @@ Parsed CXX implicit include dir info from above output: rv=done
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(arm-none-eabi-g\+\+|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/yorkuy/Code/twitch_gimbal/build/Debug/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/yorkuy/code/twitch_gimbal/build/Debug/CMakeFiles/CMakeTmp]
   ignore line: []
   ignore line: [Run Build Command(s):/usr/bin/ninja cmTC_36a7e && [1/2] Building CXX object CMakeFiles/cmTC_36a7e.dir/CMakeCXXCompilerABI.cpp.obj]
   ignore line: [Using built-in specs.]

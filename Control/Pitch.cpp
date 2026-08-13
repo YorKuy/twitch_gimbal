@@ -18,8 +18,8 @@ PID_class PID_Pitch_sp_zm(0.025, 0.1, 0, 5, 3, 0, 6,3),
     PID_Pitch_mang_zm(20, 1, 20, 400, 100, 30, 400,4.0f); //
 SMC         Pitch(45,70,0,0.001,15000,0.9,1,1),
             Pitch_Zm(60, 130, 0, 0.1, 16000, 1, 1, 1);
-SMC_PITCH SMC_Pitch(45,55, 1.0f, 0.01f, 10000, 0.8f, 1),
-            SMC_Pitch_Zm(52,65, 21.0f, 0.01f, 12000, 0.8f, 1.0f);
+SMC_PITCH SMC_Pitch(35,45, 1.0f, 0.01f, 20000, 0.8f, 1),
+            SMC_Pitch_Zm(40,55, 25.0f, 0.01f, 20000, 0.8f, 1.0f);
 static PITCH pitch_instance;
 PITCH *pitch = &pitch_instance;
 extern MOTOR_DM DM_PITCH;

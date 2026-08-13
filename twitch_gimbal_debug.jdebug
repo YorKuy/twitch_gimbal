@@ -22,7 +22,6 @@ void OnProjectLoad (void) {
   //
   // Dialog-generated settings
   //
-  Project.AddPathSubstitute ("/home/yorkuy/Code/twitch_gimbal", "$(ProjectDir)");
   Project.AddPathSubstitute ("/home/yorkuy/code/twitch_gimbal", "$(ProjectDir)");
   Project.SetDevice ("STM32F405RG");
   Project.SetHostIF ("USB", "602712707");

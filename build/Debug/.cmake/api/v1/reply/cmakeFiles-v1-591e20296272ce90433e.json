@@ -150,8 +150,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/yorkuy/Code/twitch_gimbal/build/Debug",
-		"source" : "/home/yorkuy/Code/twitch_gimbal"
+		"build" : "/home/yorkuy/code/twitch_gimbal/build/Debug",
+		"source" : "/home/yorkuy/code/twitch_gimbal"
 	},
 	"version" : 
 	{

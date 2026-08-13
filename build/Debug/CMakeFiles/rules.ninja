@@ -72,7 +72,7 @@ rule C_COMPILER__STM32_Drivers_Debug
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /usr/bin/cmake --regenerate-during-build -S/home/yorkuy/Code/twitch_gimbal -B/home/yorkuy/Code/twitch_gimbal/build/Debug
+  command = /usr/bin/cmake --regenerate-during-build -S/home/yorkuy/code/twitch_gimbal -B/home/yorkuy/code/twitch_gimbal/build/Debug
   description = Re-running CMake...
   generator = 1
 

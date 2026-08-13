@@ -1,8 +1,8 @@
-/home/yorkuy/Code/twitch_gimbal/Core/Src/tim.c:35:6:MX_TIM1_Init	32	static
-/home/yorkuy/Code/twitch_gimbal/Core/Src/tim.c:76:6:MX_TIM2_Init	32	static
-/home/yorkuy/Code/twitch_gimbal/Core/Src/tim.c:116:6:MX_TIM5_Init	32	static
-/home/yorkuy/Code/twitch_gimbal/Core/Src/tim.c:156:6:MX_TIM6_Init	16	static
-/home/yorkuy/Code/twitch_gimbal/Core/Src/tim.c:189:6:MX_TIM7_Init	16	static
-/home/yorkuy/Code/twitch_gimbal/Core/Src/tim.c:222:6:MX_TIM8_Init	32	static
-/home/yorkuy/Code/twitch_gimbal/Core/Src/tim.c:263:6:HAL_TIM_Base_MspInit	40	static
-/home/yorkuy/Code/twitch_gimbal/Core/Src/tim.c:360:6:HAL_TIM_Base_MspDeInit	16	static
+/home/yorkuy/code/twitch_gimbal/Core/Src/tim.c:35:6:MX_TIM1_Init	32	static
+/home/yorkuy/code/twitch_gimbal/Core/Src/tim.c:76:6:MX_TIM2_Init	32	static
+/home/yorkuy/code/twitch_gimbal/Core/Src/tim.c:116:6:MX_TIM5_Init	32	static
+/home/yorkuy/code/twitch_gimbal/Core/Src/tim.c:156:6:MX_TIM6_Init	16	static
+/home/yorkuy/code/twitch_gimbal/Core/Src/tim.c:189:6:MX_TIM7_Init	16	static
+/home/yorkuy/code/twitch_gimbal/Core/Src/tim.c:222:6:MX_TIM8_Init	32	static
+/home/yorkuy/code/twitch_gimbal/Core/Src/tim.c:263:6:HAL_TIM_Base_MspInit	40	static
+/home/yorkuy/code/twitch_gimbal/Core/Src/tim.c:360:6:HAL_TIM_Base_MspDeInit	16	static

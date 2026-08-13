@@ -7,9 +7,9 @@
 
 #define YAW_ST 6600
 UpDown_check_class UD_Yaw_Back(0);
-SMC Yaw(36,60, 0, 0.01, 30000, 0.9, 1, 1),
-    Yaw_Zm(55, 75, 0, 0.01, 30000, 0.9, 1, 1),
-    Yaw_Back(15, 70, 0, 0.001, 16000, 0.9, 1, 1);
+SMC Yaw(28,50, 0, 0.01, 30000, 0.9, 1, 1),
+    Yaw_Zm(30, 55, 0, 0.01, 30000, 0.9, 1, 1),
+    Yaw_Back(15, 50, 0, 0.001, 16000, 0.9, 1, 1);
 PID_class yaw_angle(20, 0, 0, 450, 0, 10, 500),
           yaw_speed(0.02, 0, 0, 10, 0, 0, 10),
           yaw_back_angle(30,0,10,450,0,10,500),
@@ -67,6 +67,81 @@ void YAW::set_SMCref(f Target_Angle)
 void YAW::set_Yaw_Angle(f Target_Angle)
 {
     this->Target_Angle = Target_Angle;
+}
+
+void YAW::set_ChassisSpinState(f speed, bool enabled, f phase_sin, f phase_cos)
+{
+    // The chassis uses joystick-speed units (currently roughly 0..520).  A
+    // bounded value prevents a malformed CAN frame from producing a large
+    // feed-forward torque while still allowing the full configured range.
+    if (speed > 1000.0f)
+        speed = 1000.0f;
+    else if (speed < -1000.0f)
+        speed = -1000.0f;
+
+    if (phase_sin > 1.0f)
+        phase_sin = 1.0f;
+    else if (phase_sin < -1.0f)
+        phase_sin = -1.0f;
+    if (phase_cos > 1.0f)
+        phase_cos = 1.0f;
+    else if (phase_cos < -1.0f)
+        phase_cos = -1.0f;
+
+    chassis_spin_speed_target = enabled ? speed : 0.0f;
+    chassis_spin_phase_sin_target = enabled ? phase_sin : 0.0f;
+    chassis_spin_phase_cos_target = enabled ? phase_cos : 1.0f;
+    chassis_spin_enabled = enabled;
+    chassis_spin_update_tick = HAL_GetTick();
+
+    if (!enabled)
+    {
+        chassis_spin_speed_filtered = 0.0f;
+        Chassis_Spin_FF_Torque = 0.0f;
+        Chassis_Spin_Rear_Weight = 0.0f;
+    }
+}
+
+f YAW::chassisSpinFeedforward(void)
+{
+    const uint32_t now = HAL_GetTick();
+    const bool timed_out = (uint32_t)(now - chassis_spin_update_tick) > CHASSIS_SPIN_FF_TIMEOUT_MS;
+    if (!chassis_spin_enabled || timed_out)
+    {
+        chassis_spin_speed_filtered = 0.0f;
+        Chassis_Spin_FF_Torque = 0.0f;
+        Chassis_Spin_Rear_Weight = 0.0f;
+        return 0.0f;
+    }
+
+    // Smooth the command so entering/leaving XTL does not create a torque
+    // step that would disturb the vision loop.
+    chassis_spin_speed_filtered += 0.05f * (chassis_spin_speed_target - chassis_spin_speed_filtered);
+    chassis_spin_phase_sin_filtered += 0.25f * (chassis_spin_phase_sin_target - chassis_spin_phase_sin_filtered);
+    chassis_spin_phase_cos_filtered += 0.25f * (chassis_spin_phase_cos_target - chassis_spin_phase_cos_filtered);
+
+    const f phase_norm = sqrtf(chassis_spin_phase_sin_filtered * chassis_spin_phase_sin_filtered +
+                               chassis_spin_phase_cos_filtered * chassis_spin_phase_cos_filtered);
+    f normalized_cos = (phase_norm > 0.1f) ? chassis_spin_phase_cos_filtered / phase_norm : 1.0f;
+    if (normalized_cos > 1.0f)
+        normalized_cos = 1.0f;
+    else if (normalized_cos < -1.0f)
+        normalized_cos = -1.0f;
+
+    // Smoothly interpolate the gain: front centre -> 0, rear centre -> 1.
+    // This matches the observed once-per-revolution mechanical disturbance
+    // without changing the normal auto-aim controller gains.
+    Chassis_Spin_Rear_Weight = 0.5f * (1.0f - normalized_cos);
+    const f phase_gain = CHASSIS_SPIN_FF_FRONT_GAIN +
+        (CHASSIS_SPIN_FF_REAR_GAIN - CHASSIS_SPIN_FF_FRONT_GAIN) * Chassis_Spin_Rear_Weight;
+
+    f torque = CHASSIS_SPIN_FF_SIGN * phase_gain * chassis_spin_speed_filtered;
+    if (torque > CHASSIS_SPIN_FF_MAX_TORQUE)
+        torque = CHASSIS_SPIN_FF_MAX_TORQUE;
+    else if (torque < -CHASSIS_SPIN_FF_MAX_TORQUE)
+        torque = -CHASSIS_SPIN_FF_MAX_TORQUE;
+    Chassis_Spin_FF_Torque = torque;
+    return Chassis_Spin_FF_Torque;
 }
 
 YAW::StateFunc YAW::stateFuncOf(State state)
@@ -188,5 +263,19 @@ float YAW::Yaw_Out_Interface(u8 jianshu_flag)
     {
         switchState(nextState);
     }
-    return runCurrentState(jianshu_flag);
+    const f state_output = runCurrentState(jianshu_flag);
+    if (currentMode == Mode::PROTECT)
+    {
+        // Do not retain a stale compensation command while the gimbal is
+        // disabled.  This also makes the first frame after re-enabling safe.
+        chassis_spin_speed_filtered = 0.0f;
+        Chassis_Spin_FF_Torque = 0.0f;
+        Chassis_Spin_Rear_Weight = 0.0f;
+        Yaw_Out = 0.0f;
+    }
+    else
+    {
+        Yaw_Out = state_output + chassisSpinFeedforward();
+    }
+    return Yaw_Out;
 }

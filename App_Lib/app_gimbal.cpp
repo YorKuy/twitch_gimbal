@@ -21,6 +21,7 @@
 #define DOGHOLE_FLAG_MASK (0x0001 << 1)
 #define SPEED_CUT_FLAG_MASK (0x0001 << 2)
 #define XTL_FLAG_MASK (0x0001 << 3)
+#define CHASSIS_SPIN_FF_CAN_ID 0x116
 #define PI 3.1415926
 #define JG_ON HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET)
 
@@ -182,6 +183,7 @@ static void can2_communicate_deal(void)
     shooter_id1_17mm_cooling_limit = CAN_2.rx_buf[5] | CAN_2.rx_buf[4] << 8;
     shooter_id1_17mm_cooling_heat = CAN_2.rx_buf[7] | CAN_2.rx_buf[6] << 8;
   }
+
 }
 
 static void jianshu_deal(void)
@@ -364,7 +366,7 @@ void App_Gimbal_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
         if (PITCH_Mode == PROTECT_MODE)
           DM_PITCH.DM_MIT(0x01, 0, 0, 0, 0, 0);
         else
-          DM_PITCH.DM_MIT(0x01, 0, 0, 0, 0.5, Pitch_Pid_Out);//-Pitch_Pid_Out
+          DM_PITCH.DM_MIT(0x01, 0, 0, 0, 0.05, Pitch_Pid_Out);//-Pitch_Pid_Out
       }
     }
     else
@@ -374,7 +376,7 @@ void App_Gimbal_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
         if (YAW_Mode == PROTECT_MODE)
           DM_YAW.DM_MIT(0x02, 0, 0, 0, 0, 0);
         else
-          DM_YAW.DM_MIT(0x02, 0, 0, 0, 0.2, Yaw_Pid_Out);
+          DM_YAW.DM_MIT(0x02, 0, 0, 0, 0, Yaw_Pid_Out);
       }
     }
     dm_send_flag++;
@@ -389,18 +391,16 @@ void App_Gimbal_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     AS.Q_info_3.f = GIMBAL_088.q3_t;
     AS.heat_speed.f = 24.4;
     Mini_PC_SendData();
-    // if (YK_Mode == PROTECT_MODE)
-    // {
-    //   mcl_stop_flag++;
-    //   if(mcl_stop_flag > 5)
-    //   CAN_1.Send_RM(0x200, 0, 0, 0, 0);
-    // }
-    // else
-    // {
-    //   mcl_stop_flag = 0;
-    //   CAN_1.Send_RM(0x200, mcl->PID_OUT[0], mcl->PID_OUT[1], 0, 0);
-    // }
+    static uint8_t mcl_flag = 0;
+    if (YK_Mode == PROTECT_MODE && ++ mcl_flag > 10)
+    {
+      CAN_1.Send_RM(0x200, 0, 0, 0, 0);
+    }
+    else
+    {
+     mcl_flag = 0;
     CAN_1.Send_RM(0x200, mcl->PID_OUT[0], mcl->PID_OUT[1], 0, 0);
+    }
   }
 }
 
@@ -422,6 +422,19 @@ void App_Gimbal_CAN2_RxFifo1Callback(CAN_HandleTypeDef *hcan)
   (void)hcan;
   if (CAN_2.Receive(&hcan2) == HAL_OK)
   {
+    // Chassis publishes speed, enable, sin(relative yaw), cos(relative yaw).
+    // Process it on the receive interrupt rather than polling a stale header.
+    if (CAN_2.RxHeader.StdId == CHASSIS_SPIN_FF_CAN_ID)
+    {
+      const int16_t spin_speed = (int16_t)((CAN_2.rx_buf[0] << 8) | CAN_2.rx_buf[1]);
+      const uint16_t spin_enabled = (uint16_t)((CAN_2.rx_buf[2] << 8) | CAN_2.rx_buf[3]);
+      const int16_t spin_phase_sin = (int16_t)((CAN_2.rx_buf[4] << 8) | CAN_2.rx_buf[5]);
+      const int16_t spin_phase_cos = (int16_t)((CAN_2.rx_buf[6] << 8) | CAN_2.rx_buf[7]);
+      yaw->set_ChassisSpinState((float)spin_speed, spin_enabled != 0U,
+                                (float)spin_phase_sin / CHASSIS_SPIN_PHASE_SCALE,
+                                (float)spin_phase_cos / CHASSIS_SPIN_PHASE_SCALE);
+    }
+
     if (DM_YAW.DM_update() == HAL_OK)
     {
       Yaw_Pid_Out = yaw->Yaw_Out_Interface(jianshu_flag);

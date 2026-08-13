@@ -60,14 +60,14 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "STM32_Drivers::@768a070a0fe75716b479",
-					"jsonFile" : "target-STM32_Drivers-Debug-1e27b75107f300426e2c.json",
+					"jsonFile" : "target-STM32_Drivers-Debug-e9dc7c32b79bf559faee.json",
 					"name" : "STM32_Drivers",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "twitch_gimbal::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-twitch_gimbal-Debug-89bd2a9dd6e5a032cbba.json",
+					"jsonFile" : "target-twitch_gimbal-Debug-533109067d8c7074eee6.json",
 					"name" : "twitch_gimbal",
 					"projectIndex" : 0
 				}
@@ -77,8 +77,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/yorkuy/Code/twitch_gimbal/build/Debug",
-		"source" : "/home/yorkuy/Code/twitch_gimbal"
+		"build" : "/home/yorkuy/code/twitch_gimbal/build/Debug",
+		"source" : "/home/yorkuy/code/twitch_gimbal"
 	},
 	"version" : 
 	{

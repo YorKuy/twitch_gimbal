@@ -15,7 +15,7 @@ PID_class M2006_BP_Speed(13, 0, 0, 16000, 0, 0, 16000),
     M2006_BP_Con_Speed(13, 0, 0, 16000, 0, 0, 16000),
     M2006_BP_Con_Angle(0.45, 0, 0, 16000, 0, 0, 16000);
 UpDown_check_class UD_BP_ON(0), UD_BP_ALIGN(0), UD_BP_PREFAB_RELEASE(0), UD_BP_DF(0);
-UpDown_check_class UD_PR_BP(0);
+UpDown_check_class UD_PR_BP(0),UD_BP_FIRE(0);
 MCL *mcl = new MCL();
 BP *bp = new BP();
 static u8 buff_flag = 1;
@@ -206,7 +206,7 @@ f BP::BP_Out_Interface(u8 YK_Mode, u8 jianshu_flag)
     // 目标角度更新（原 BP_deal 逻辑）
     if (YK_Mode == SHOOT_MODE)
     {
-        if (UD_BP_ON.updata(bp->ONE_ON) == UpDown_check_rising && mcl->Mode == 1 && Error_flag == 0)
+        if (UD_BP_ON.updata(bp->ONE_ON) == UpDown_check_rising || ((UD_BP_FIRE.updata(SuperPower.mode == 2) == UpDown_check_rising)&&request.zimiao_status) && mcl->Mode == 1 && Error_flag == 0)
         {
             bp->One_Target_Angle = M2006_BP.mang_inf;
             if (abs((int32_t)M2006_BP.mang_inf % (int32_t)BOPAN_ANGLE) < 10000)
@@ -226,7 +226,7 @@ f BP::BP_Out_Interface(u8 YK_Mode, u8 jianshu_flag)
                 bp->Blockage_To_Daed = 0;
             }
         }
-        else if (((bp->CON_ON || (request.zimiao_status && SuperPower.mode == 2)) && mcl->Mode == 1) && Error_flag == 0 && buff_mode != 1)
+        else if (((bp->CON_ON || (request.zimiao_status && SuperPower.mode == 3)) && mcl->Mode == 1) && Error_flag == 0 && buff_mode != 1)
         {
             bp->Continuous_shooting_flag = 1;
             bp->Continuous_Target_Angle -= Shot_SP_1 * 15;
@@ -247,7 +247,7 @@ f BP::BP_Out_Interface(u8 YK_Mode, u8 jianshu_flag)
     else if (YK_Mode == PLAYER_MODE)
     {
         remain_heat = shooter_id1_17mm_cooling_limit - shooter_id1_17mm_cooling_heat;
-        if (UD_BP_DF.updata(YK.shubiao.press_l) == UpDown_check_rising && (remain_heat > 30 || YK.Pressed_Check(KEY_PRESSED_CTRL)))
+        if ((((UD_BP_FIRE.updata(SuperPower.mode == 2) == UpDown_check_rising && request.zimiao_status)|| UD_BP_DF.updata(YK.shubiao.press_l) == UpDown_check_rising) && (remain_heat > 30 || YK.Pressed_Check(KEY_PRESSED_CTRL))))
         {
             bp->One_Target_Angle = M2006_BP.mang_inf;
             bp->One_Target_Angle -= BOPAN_ANGLE;
@@ -255,7 +255,7 @@ f BP::BP_Out_Interface(u8 YK_Mode, u8 jianshu_flag)
             bp->Continuous_shooting_flag = 0;
             bp->delay_2ms = 0;
         }
-        else if ((((YK.shubiao.press_l) && bp->delay_2ms > 150) || (request.zimiao_status && YK.shubiao.press_l && SuperPower.mode == 2 && mcl->Mode)) && buff_mode == 0)
+        else if ((((YK.shubiao.press_l) && bp->delay_2ms > 150 && !request.zimiao_status) || (request.zimiao_status && YK.shubiao.press_l && SuperPower.mode == 2 && mcl->Mode && bp->delay_2ms > 150))&& buff_mode == 0)
         {
             bp->Continuous_shooting_flag = 1;
 #if BP_TEST_FLAG

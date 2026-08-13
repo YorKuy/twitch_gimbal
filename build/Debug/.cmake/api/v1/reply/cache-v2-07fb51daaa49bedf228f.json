@@ -179,7 +179,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/yorkuy/Code/twitch_gimbal/build/Debug"
+			"value" : "/home/yorkuy/code/twitch_gimbal/build/Debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -667,7 +667,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/yorkuy/Code/twitch_gimbal"
+			"value" : "/home/yorkuy/code/twitch_gimbal"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1130,8 +1130,8 @@
 					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "UNINITIALIZED",
-			"value" : "/home/yorkuy/Code/twitch_gimbal/cmake/gcc-arm-none-eabi.cmake"
+			"type" : "FILEPATH",
+			"value" : "/home/yorkuy/code/twitch_gimbal/cmake/gcc-arm-none-eabi.cmake"
 		},
 		{
 			"name" : "CMAKE_UNAME",
@@ -1171,7 +1171,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/yorkuy/Code/twitch_gimbal/build/Debug"
+			"value" : "/home/yorkuy/code/twitch_gimbal/build/Debug"
 		},
 		{
 			"name" : "twitch_gimbal_IS_TOP_LEVEL",
@@ -1195,7 +1195,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/yorkuy/Code/twitch_gimbal"
+			"value" : "/home/yorkuy/code/twitch_gimbal"
 		}
 	],
 	"kind" : "cache",

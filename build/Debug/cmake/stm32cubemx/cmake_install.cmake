@@ -1,4 +1,4 @@
-# Install script for directory: /home/yorkuy/Code/twitch_gimbal/cmake/stm32cubemx
+# Install script for directory: /home/yorkuy/code/twitch_gimbal/cmake/stm32cubemx
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
