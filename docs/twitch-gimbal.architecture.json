@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Twitch Gimbal Firmware — Runtime Architecture",
+    "locale": "zh-CN",
+    "output": "twitch-gimbal.architecture.html",
+    "quality_profile": "showcase",
+    "viewBox": [1390, 700]
+  },
+  "layout": { "mode": "grid", "origin": [40, 80], "cols": 4, "gapX": 70, "gapY": 70, "cellW": 190, "cellH": 100 },
+  "components": [
+    { "id": "operator", "type": "external", "label": "遥控器 / 操作者", "pos": [20, 270], "size": [170, 70] },
+    { "id": "pc", "type": "external", "label": "视觉上位机 / 裁判系统", "pos": [20, 430], "size": [190, 70] },
+    { "id": "stm32", "type": "backend", "label": "STM32 应用入口", "sublabel": "HAL init + App_Gimbal_Loop", "pos": [240, 270], "size": [190, 70] },
+    { "id": "control", "type": "backend", "label": "云台控制状态机", "sublabel": "Yaw / Pitch / Shoot", "pos": [450, 150], "size": [190, 70] },
+    { "id": "math", "type": "backend", "label": "控制算法与滤波", "sublabel": "PID / SMC / my_math", "pos": [450, 390], "size": [190, 70] },
+    { "id": "motor", "type": "backend", "label": "电机协议与执行", "sublabel": "RM / DM / RMD", "pos": [670, 270], "size": [180, 70] },
+    { "id": "comm", "type": "backend", "label": "通信与协议适配", "sublabel": "CAN + UART DMA", "pos": [670, 510], "size": [180, 70] },
+    { "id": "hal", "type": "backend", "label": "STM32 HAL / 中断", "sublabel": "GPIO CAN SPI UART TIM DMA", "pos": [900, 150], "size": [200, 70] },
+    { "id": "imu", "type": "external", "label": "BMI088 姿态传感器", "sublabel": "SPI1 + TIM7 sampling", "pos": [1140, 270], "size": [200, 70] },
+    { "id": "hardware", "type": "external", "label": "CAN 电机与云台机构", "sublabel": "DM / RM / M2006 / M3508", "pos": [900, 390], "size": [220, 70] }
+  ],
+  "boundaries": [
+    { "kind": "region", "label": "MCU 固件边界", "wraps": ["stm32", "control", "math", "motor", "comm", "hal"], "pad": 28 }
+  ],
+  "connections": [
+    { "id": "operator-main", "from": "operator", "to": "stm32", "variant": "emphasis" },
+    { "id": "pc-comm", "from": "pc", "to": "comm", "label": "视觉 / 裁判帧", "variant": "emphasis", "fromSide": "right", "toSide": "left" },
+    { "id": "main-control", "from": "stm32", "to": "control", "fromSide": "top", "toSide": "bottom" },
+    { "id": "main-math", "from": "stm32", "to": "math", "fromSide": "bottom", "toSide": "top" },
+    { "id": "control-math", "from": "control", "to": "math", "fromSide": "bottom", "toSide": "top" },
+    { "id": "control-motor", "from": "control", "to": "motor", "label": "Yaw/Pitch/Shoot 输出", "fromSide": "right", "toSide": "left" },
+    { "id": "math-motor", "from": "math", "to": "motor", "fromSide": "right", "toSide": "bottom" },
+    { "id": "comm-motor", "from": "comm", "to": "motor", "label": "CAN 收发", "variant": "dashed", "fromSide": "top", "toSide": "bottom" },
+    { "id": "motor-hal", "from": "motor", "to": "hal", "label": "HAL_CAN / 定时器", "fromSide": "right", "toSide": "left" },
+    { "id": "hal-imu", "from": "hal", "to": "imu", "label": "SPI1 读取", "fromSide": "right", "toSide": "left" },
+    { "id": "hal-hardware", "from": "hal", "to": "hardware", "label": "CAN / GPIO 驱动", "fromSide": "bottom", "toSide": "top" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "主调用链", "items": ["main 初始化外设后循环调用 App_Gimbal_Loop", "Yaw/Pitch/Shoot 使用 PID/SMC，经 CAN/HAL 驱动电机"] },
+    { "dot": "emerald", "title": "外部依赖", "items": ["STM32F4 HAL/CMSIS、CMake 生成的外设初始化", "DT16/VT13、视觉上位机、裁判系统、BMI088 与 CAN 电机"] },
+    { "dot": "rose", "title": "信任边界", "items": ["应用、控制算法和协议库位于 MCU 固件边界", "UART/CAN/SPI 另一侧是外部输入或物理执行器"] }
+  ]
+}

@@ -67,7 +67,7 @@ void SystemClock_Config(void);
   * @brief  The application entry point.
   * @retval int
   */
-#ifndef TWITCH_GIMBAL_USE_CPP_MAIN
+#ifdef AAA
 int main(void)
 {
 
@@ -122,8 +122,7 @@ int main(void)
   }
   /* USER CODE END 3 */
 }
-#endif
-
+#endif 
 /**
   * @brief System Clock Configuration
   * @retval None

@@ -1,7 +1,7 @@
-/home/yorkuy/code/twitch_gimbal/Core/Src/usart.c:42:6:MX_UART5_Init	8	static
-/home/yorkuy/code/twitch_gimbal/Core/Src/usart.c:71:6:MX_USART1_UART_Init	8	static
-/home/yorkuy/code/twitch_gimbal/Core/Src/usart.c:100:6:MX_USART2_UART_Init	8	static
-/home/yorkuy/code/twitch_gimbal/Core/Src/usart.c:129:6:MX_USART3_UART_Init	8	static
-/home/yorkuy/code/twitch_gimbal/Core/Src/usart.c:158:6:MX_USART6_UART_Init	8	static
-/home/yorkuy/code/twitch_gimbal/Core/Src/usart.c:186:6:HAL_UART_MspInit	80	static
-/home/yorkuy/code/twitch_gimbal/Core/Src/usart.c:484:6:HAL_UART_MspDeInit	16	static
+/home/yorkuy/Code/RM_code/twitch_gimbal/Core/Src/usart.c:42:6:MX_UART5_Init	8	static
+/home/yorkuy/Code/RM_code/twitch_gimbal/Core/Src/usart.c:71:6:MX_USART1_UART_Init	8	static
+/home/yorkuy/Code/RM_code/twitch_gimbal/Core/Src/usart.c:100:6:MX_USART2_UART_Init	8	static
+/home/yorkuy/Code/RM_code/twitch_gimbal/Core/Src/usart.c:129:6:MX_USART3_UART_Init	8	static
+/home/yorkuy/Code/RM_code/twitch_gimbal/Core/Src/usart.c:158:6:MX_USART6_UART_Init	8	static
+/home/yorkuy/Code/RM_code/twitch_gimbal/Core/Src/usart.c:186:6:HAL_UART_MspInit	80	static
+/home/yorkuy/Code/RM_code/twitch_gimbal/Core/Src/usart.c:484:6:HAL_UART_MspDeInit	16	static

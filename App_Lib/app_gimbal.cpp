@@ -422,8 +422,6 @@ void App_Gimbal_CAN2_RxFifo1Callback(CAN_HandleTypeDef *hcan)
   (void)hcan;
   if (CAN_2.Receive(&hcan2) == HAL_OK)
   {
-    // Chassis publishes speed, enable, sin(relative yaw), cos(relative yaw).
-    // Process it on the receive interrupt rather than polling a stale header.
     if (CAN_2.RxHeader.StdId == CHASSIS_SPIN_FF_CAN_ID)
     {
       const int16_t spin_speed = (int16_t)((CAN_2.rx_buf[0] << 8) | CAN_2.rx_buf[1]);
